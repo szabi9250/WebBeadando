@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="hu">
+	<head>
+		<title>
+		Beadandó
+		</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="style.css"/>
+		<link rel="stylesheet" href="tablazat.css"/>
+		<script src="js/tablazat.js"></script>
+	</head>
+			<header>
+			 <h1>Web-programozás-1 Előadás Házi feladat</h1>
+			</header>
+	<body onload="AlapAdat()">
+		<div id="container">
+			<nav>
+					<ul>
+					<li class="nav-item">
+					<a class="nav-link" href="index.html" target="_self">Kezdőlap</a>
+				  </li>
+				  <li class="jelenlegi">
+					<a class="nav-link" href="tablazat.html" target="_self">Táblázat</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="menu.html" target="_self" >HTML5 menü</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="chartjs.html" target="_self" >ChartJS</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="ajax.html" target="_self" >Ajax</a>
+				  </li>
+				  </ul>
+			</nav>
+		<div id="kereses">
+	<input type="text" id="Keres" onkeyup="Kereses(0)" placeholder="Név keresése" title="Írjon be egy nevet">
+	<input type="text" id="EmailKeres" onkeyup="Kereses(1)" placeholder="Email keresése" title="Írjon be egy emailt">
+	<input type="text" id="KorKeres" onkeyup="Kereses(2)" placeholder="Életkor keresése" title="Írjon be egy életkort">
+	<input type="text" id="VarosKeres" onkeyup="Kereses(3)" placeholder="Város keresése" title="Írjon be egy várost">
+		</div>
+			<div id="content">
+					<div class="employee-form">
+		<form onsubmit="event.preventDefault();onFormSubmit();">
+			<div>
+				<label>Teljes név* (maximum 40 karakter)</label><label class="validation-error hide" id="nevValidationError">This field is required.</label>
+				<input type="text" name="nev" id="nev" required maxlength = "40" size="50">
+			</div>
+			<div>
+				<label>Email* (maximum 30 karakter)</label>
+				<input type="email" name="email" id="email" required maxlength = "30">
+			</div>
+			<div>
+				<label>Életkor (0-99)</label>
+				<input type="number" name="kor" id="kor" maxlength = "2" pattern ="[0-9]">
+			</div>
+			<div>
+				<label>Város* (maximum 30 karakter)</label>
+				<input type="text" name="varos" id="varos" required maxlength="30">
+			</div>
+			<div  class="form-action-buttons">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	<br/>
+	<p>Rendszerezéshez nyomjon az adott mező fejlécére:</p>
+	<div class = "employees-table">
+		<table class="list" id="lista">
+			<thead>
+				<tr>
+					<th onclick="sortTable(0)">Teljes név</th>
+					<th onclick="sortTable(1)">Email</th>
+					<th onclick="sortTable(2)">Életkor</th>
+					<th onclick="sortTable(3)">Város</th>
+					<th>Lehetőségek</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+			<footer>
+				Szebeni Szabolcs, LNGZRW
+			</footer>
+		</div>
+	<aside>
+	</aside>
+				</div>
+	</body>
+
+</html>
